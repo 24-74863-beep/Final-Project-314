@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!-- OWNER app. Only files from frontend/shared and frontend/owner are loaded here. Script order matters: services, core, App.js, components and pages, main.js. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="../../shared/images/favicon.svg">
+<title>Owner – Bobby's Motorcycle Repair System</title>
+<link rel="stylesheet" href="../../shared/css/style.css">
+</head>
+<body data-role="owner">
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><h1>Bobby's Repair</h1><p>Repair Management System</p></div>
+    <nav class="nav" id="nav"></nav>
+    <div class="me" id="me"></div>
+  </aside>
+  <div class="main">
+    <header class="topbar">
+      <button class="btn menu-btn" id="menuBtn" type="button">Menu</button>
+      <h2 id="pageTitle"></h2>
+      <div class="clock" id="clock" aria-label="Current date and time"><span id="clockDate"></span><b id="clockTime"></b></div>
+      <button class="btn sm" id="pwBtn" type="button">Change password</button>
+      <button class="btn sm danger" id="logoutBtn" type="button">Logout</button>
+    </header>
+    <main class="content" id="content"></main>
+  </div>
+</div>
+<div id="modal"></div>
+<div id="toast"></div>
+<script src="../../shared/js/config/shop.js"></script>
+<script src="../../shared/js/utils/validation.js"></script>
+<script src="../../shared/js/services/database.js"></script>
+<script src="../../shared/js/services/authService.js"></script>
+<script src="../../shared/js/services/signupService.js"></script>
+<script src="../../shared/js/services/accountService.js"></script>
+<script src="../../shared/js/services/customerService.js"></script>
+<script src="../../shared/js/services/motorcycleService.js"></script>
+<script src="../../shared/js/services/paymentService.js"></script>
+<script src="../../shared/js/services/emergencyService.js"></script>
+<script src="../../shared/js/services/requestService.js"></script>
+<script src="../js/services/jobLimitService.js"></script>
+<script src="../js/services/stockService.js"></script>
+<script src="../js/services/repairService.js"></script>
+<script src="../js/services/mechanicService.js"></script>
+<script src="../js/services/catalogService.js"></script>
+<script src="../js/services/reportService.js"></script>
+<script src="../../shared/js/ui/core.js"></script>
+<script src="../js/App.js"></script>
+<script src="../../shared/js/components/PasswordForm.js"></script>
+<script src="../../shared/js/components/Receipt.js"></script>
+<script src="../js/components/JobLimitList.js"></script>
+<script src="../js/components/StockInfo.js"></script>
+<script src="../js/pages/RepairsPage.js"></script>
+<script src="../js/pages/EmergenciesPage.js"></script>
+<script src="../js/pages/CustomersPage.js"></script>
+<script src="../js/pages/MotorcyclesPage.js"></script>
+<script src="../js/pages/MechanicsPage.js"></script>
+<script src="../js/pages/CatalogPage.js"></script>
+<script src="../js/pages/PaymentsPage.js"></script>
+<script src="../js/pages/ReportsPage.js"></script>
+<script src="../js/pages/AccountsPage.js"></script>
+<script src="../js/pages/BackupPage.js"></script>
+<script src="../../shared/js/components/LogoutButton.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>
