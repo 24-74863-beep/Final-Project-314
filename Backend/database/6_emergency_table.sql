@@ -1,0 +1,21 @@
+CREATE TABLE IF NOT EXISTS emergencies (
+  id            INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  customer_id   INT UNSIGNED NULL,
+  contact_name  VARCHAR(120) NOT NULL,
+  phone         VARCHAR(20)  NOT NULL,
+  motorcycle_id INT UNSIGNED NULL,
+  moto_info     VARCHAR(255) NOT NULL DEFAULT '',
+  location      VARCHAR(255) NOT NULL,
+  problem       TEXT NOT NULL,
+  urgency       VARCHAR(20)  NOT NULL DEFAULT 'Low',
+  status        VARCHAR(20)  NOT NULL DEFAULT 'Pending',
+  mechanic_id   INT UNSIGNED NULL,
+  repair_id     INT UNSIGNED NULL,
+  created_at    VARCHAR(30)  NOT NULL,
+  extra         JSON NULL,
+  KEY ix_emergencies_status (status),
+  CONSTRAINT fk_em_customer FOREIGN KEY (customer_id)   REFERENCES customers(id)   ON DELETE SET NULL,
+  CONSTRAINT fk_em_moto     FOREIGN KEY (motorcycle_id) REFERENCES motorcycles(id) ON DELETE SET NULL,
+  CONSTRAINT fk_em_mechanic FOREIGN KEY (mechanic_id)   REFERENCES mechanics(id)   ON DELETE SET NULL,
+  CONSTRAINT fk_em_repair   FOREIGN KEY (repair_id)     REFERENCES repairs(id)     ON DELETE SET NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
